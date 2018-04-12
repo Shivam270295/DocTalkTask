@@ -1,8 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { DocktalkService } from './docktalk.service';
+import { HttpClientModule }    from '@angular/common/http';
 
 import { AppComponent } from './app.component';
+import { Ng2AutoCompleteModule } from 'ng2-auto-complete';
 
 
 @NgModule({
@@ -10,9 +13,11 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
+    Ng2AutoCompleteModule
   ],
-  providers: [],
+  providers: [DocktalkService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

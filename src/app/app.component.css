@@ -1,0 +1,16 @@
+.search{
+float: left;
+list-style: none;
+background: #fff;
+}
+
+.search li{
+cursor: pointer;
+padding: 4px;
+margin: 2px;
+background: #eeeeee;
+}
+
+.details{
+margin: 10px;
+}

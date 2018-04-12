@@ -3,18 +3,58 @@
   <h1>
     Welcome to {{ title }}!
   </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
+
+<div>
+<h2>Enter User Name</h2> 
+<!--<input auto-complete [(ngModel)]="userQ" [source]="users"
+(input)="valueChange($event)"
+loading-text="Loading..."
+                   [list-formatter]="userAutocompleListFormatter"
+                   value-property-name="id"
+                   display-property-name="login"
+				   no-match-found-text="(User not found)"
+				   (valueChanged)="userValueChanged($event)"/>-->
+<input auto-complete [(ngModel)]="userQ"(input)="valueChange($event)"/>
+<ul class="search">
+<li *ngFor="let user of users" (click)="userSelected(user.login)">{{user.login}}</li>
 </ul>
+</div>
+<div class="details">
+<table *ngIf="user">
+<tr>	<td>	login	</td>	<td>	{{user.login}}	</td>	</tr>
+<tr>	<td>	id	</td>	<td>	{{user.id}}	</td>	</tr>
+<tr>	<td>	avatar_url	</td>	<td>	{{user.avatar_url}}	</td>	</tr>
+<tr>	<td>	gravatar_id	</td>	<td>	{{user.gravatar_id}}	</td>	</tr>
+<tr>	<td>	url	</td>	<td>	{{user.url}}	</td>	</tr>
+<tr>	<td>	html_url	</td>	<td>	{{user.html_url}}	</td>	</tr>
+<tr>	<td>	followers_url	</td>	<td>	{{user.followers_url}}	</td>	</tr>
+<tr>	<td>	following_url	</td>	<td>	{{user.following_url}}	</td>	</tr>
+<tr>	<td>	gists_url	</td>	<td>	{{user.gists_url}}	</td>	</tr>
+<tr>	<td>	starred_url	</td>	<td>	{{user.starred_url}}	</td>	</tr>
+<tr>	<td>	subscriptions_url	</td>	<td>	{{user.subscriptions_url}}	</td>	</tr>
+<tr>	<td>	organizations_url	</td>	<td>	{{user.organizations_url}}	</td>	</tr>
+<tr>	<td>	repos_url	</td>	<td>	{{user.repos_url}}	</td>	</tr>
+<tr>	<td>	events_url	</td>	<td>	{{user.events_url}}	</td>	</tr>
+<tr>	<td>	received_events_url	</td>	<td>	{{user.received_events_url}}	</td>	</tr>
+<tr>	<td>	type	</td>	<td>	{{user.type}}	</td>	</tr>
+<tr>	<td>	site_admin	</td>	<td>	{{user.site_admin}}	</td>	</tr>
+<tr>	<td>	name	</td>	<td>	{{user.name}}	</td>	</tr>
+<tr>	<td>	company	</td>	<td>	{{user.company}}	</td>	</tr>
+<tr>	<td>	blog	</td>	<td>	{{user.blog}}	</td>	</tr>
+<tr>	<td>	location	</td>	<td>	{{user.location}}	</td>	</tr>
+<tr>	<td>	email	</td>	<td>	{{user.email}}	</td>	</tr>
+<tr>	<td>	hireable	</td>	<td>	{{user.hireable}}	</td>	</tr>
+<tr>	<td>	bio	</td>	<td>	{{user.bio}}	</td>	</tr>
+<tr>	<td>	public_repos	</td>	<td>	{{user.public_repos}}	</td>	</tr>
+<tr>	<td>	public_gists	</td>	<td>	{{user.public_gists}}	</td>	</tr>
+<tr>	<td>	followers	</td>	<td>	{{user.followers}}	</td>	</tr>
+<tr>	<td>	following	</td>	<td>	{{user.following}}	</td>	</tr>
+<tr>	<td>	created_at	</td>	<td>	{{user.created_at}}	</td>	</tr>
+<tr>	<td>	updated_at	</td>	<td>	{{user.updated_at}}	</td>	</tr>
+
+							
+
+</table>
+</div>
 
